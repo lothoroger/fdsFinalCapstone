@@ -11,11 +11,11 @@ pipeline {
 			//Run maven wrapper
 			// bat  'mvnw compile'
 		    //sh "chmod +x -R /var/jenkins_home/workspace/CapstoneJenkinsDocker"
-		     sh 'chmod +x ./mvnw'
-			 echo '${WORKSPACE}'
-			 sh './mvn -N io.takari:maven:wrapper'
-			 sh './mvnw clean install'
-			 sh './mvnw compile'
+		    // sh 'chmod +x ./mvnw'
+			// echo '${WORKSPACE}'
+			bat   'mvn -N io.takari:maven:wrapper'
+			bat  'mvnw clean install'
+			bat 'mvnw compile'
 			echo 'Building the Food Delivery Project with Maven compiler'			
 			       }
 		               }
