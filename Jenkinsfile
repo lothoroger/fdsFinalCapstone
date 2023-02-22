@@ -13,9 +13,9 @@ pipeline {
 		    //sh "chmod +x -R /var/jenkins_home/workspace/CapstoneJenkinsDocker"
 		    // sh 'chmod +x ./mvnw'
 			// echo '${WORKSPACE}'
-			bat   'mvn -N io.takari:maven:wrapper'
-			bat  'mvnw clean install'
-			bat 'mvnw compile'
+			//sh 'mvn -N io.takari:maven:wrapper'
+			sh   './mvnw clean install'
+			sh  './mvnw compile'
 			echo 'Building the Food Delivery Project with Maven compiler'			
 			       }
 		               }
