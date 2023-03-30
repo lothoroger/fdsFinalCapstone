@@ -1,0 +1,675 @@
+2023/03/11 18:08:46.039043 [INFO] Starting...
+2023/03/11 18:08:46.039079 [INFO] Starting EBPlatform-PlatformEngine
+2023/03/11 18:08:46.039137 [INFO] reading event message file
+2023/03/11 18:08:46.039260 [INFO] Engine received EB command userdata-exec
+
+2023/03/11 18:08:46.097816 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:174279880035:stack/awseb-e-wfvih94c9x-stack/93ac72c0-c037-11ed-b92c-0ea716131c1d -r AWSEBAutoScalingGroup --region us-east-1
+2023/03/11 18:08:46.713466 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:174279880035:stack/awseb-e-wfvih94c9x-stack/93ac72c0-c037-11ed-b92c-0ea716131c1d -r AWSEBBeanstalkMetadata --region us-east-1
+2023/03/11 18:08:47.415413 [INFO] This is a workflow controlled instance.
+2023/03/11 18:08:47.415478 [INFO] Engine command: (env-launch)
+
+2023/03/11 18:08:47.421062 [INFO] Executing instruction: SyncClock
+2023/03/11 18:08:47.421070 [INFO] Starting SyncClock
+2023/03/11 18:08:47.421080 [INFO] Running command /bin/sh -c /usr/bin/chronyc tracking
+2023/03/11 18:08:47.451359 [INFO] Reference ID    : A9FEA97B (169.254.169.123)
+Stratum         : 4
+Ref time (UTC)  : Sat Mar 11 18:08:45 2023
+System time     : 0.249244228 seconds fast of NTP time
+Last offset     : +0.389829218 seconds
+RMS offset      : 0.389829218 seconds
+Frequency       : 18.341 ppm slow
+Residual freq   : +58.849 ppm
+Skew            : 5.293 ppm
+Root delay      : 0.002376039 seconds
+Root dispersion : 0.000527690 seconds
+Update interval : 0.0 seconds
+Leap status     : Normal
+
+2023/03/11 18:08:47.451380 [INFO] Running command /bin/sh -c /usr/bin/chronyc -a makestep
+2023/03/11 18:08:47.212824 [INFO] 200 OK
+
+2023/03/11 18:08:47.219253 [INFO] Skipping Configure OS
+2023/03/11 18:08:47.219274 [INFO] Skipping LockRepo
+2023/03/11 18:08:47.219281 [INFO] Skipping GenerateEBBanner
+2023/03/11 18:08:47.219287 [INFO] Skipping Install Process Manager
+2023/03/11 18:08:47.219292 [INFO] Skipping install proxy
+2023/03/11 18:08:47.219298 [INFO] Skipping installhealthd
+2023/03/11 18:08:47.219303 [INFO] Skipping Install Log Streaming Manager
+2023/03/11 18:08:47.219320 [INFO] Skipping install X-Ray
+2023/03/11 18:08:47.219327 [INFO] Skipping install Third Party License
+2023/03/11 18:08:47.219334 [INFO] Instance has NOT been bootstrapped
+2023/03/11 18:08:47.219338 [INFO] Executing instruction: installSqsd
+2023/03/11 18:08:47.219343 [INFO] This is a web server environment instance, skip install sqsd daemon ...
+2023/03/11 18:08:47.219348 [INFO] Instance has NOT been bootstrapped
+2023/03/11 18:08:47.219352 [INFO] Executing instruction: bootstraphealthd
+2023/03/11 18:08:47.219356 [INFO] this is an enhanced health env ...
+2023/03/11 18:08:47.219371 [INFO] bootstrap healthd....
+2023/03/11 18:08:47.219385 [INFO] Running command /bin/sh -c /usr/bin/id -u healthd || /usr/sbin/useradd --user-group healthd -s /sbin/nologin --create-home
+2023/03/11 18:08:47.495994 [INFO] /usr/bin/id: healthd: no such user
+
+2023/03/11 18:08:47.496565 [INFO] configure bundle log for healthd...
+2023/03/11 18:08:47.496612 [INFO] Executing instruction: GetSetupProxyLog
+2023/03/11 18:08:47.496673 [INFO] Skipping Install yum packages
+2023/03/11 18:08:47.496680 [INFO] Skipping Install java dependency (ant/maven/gradle)
+2023/03/11 18:08:47.496687 [INFO] Skipping MarkBaked
+2023/03/11 18:08:47.496695 [INFO] Instance has NOT been bootstrapped
+2023/03/11 18:08:47.496698 [INFO] Executing instruction: TuneSystemSettings
+2023/03/11 18:08:47.496702 [INFO] Starting TuneSystemSettings
+2023/03/11 18:08:47.496707 [INFO] Instance has NOT been bootstrapped
+2023/03/11 18:08:47.498785 [INFO] Executing instruction: GetSetupLogRotate
+2023/03/11 18:08:47.498791 [INFO] Initialize LogRotate files and directories
+2023/03/11 18:08:47.575553 [INFO] Instance has NOT been bootstrapped
+2023/03/11 18:08:47.575567 [INFO] Executing instruction: BootstrapCFNHup
+2023/03/11 18:08:47.575572 [INFO] Bootstrap cfn-hup
+2023/03/11 18:08:47.585678 [INFO] Copying file /opt/elasticbeanstalk/config/private/aws-eb-command-handler.conf to /etc/cfn/hooks.d/aws-eb-command-handler.conf
+2023/03/11 18:08:47.596098 [INFO] Executing instruction: StartCFNHup
+2023/03/11 18:08:47.596109 [INFO] Start cfn-hup
+2023/03/11 18:08:47.596127 [INFO] Running command /bin/sh -c systemctl show -p PartOf cfn-hup.service
+2023/03/11 18:08:47.623110 [INFO] cfn-hup is not registered with EB yet, registering it now
+2023/03/11 18:08:47.623136 [INFO] Running command /bin/sh -c systemctl show -p PartOf cfn-hup.service
+2023/03/11 18:08:47.653746 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2023/03/11 18:08:47.819930 [INFO] Running command /bin/sh -c systemctl reset-failed
+2023/03/11 18:08:47.824387 [INFO] Running command /bin/sh -c systemctl is-enabled aws-eb.target
+2023/03/11 18:08:47.835158 [INFO] Running command /bin/sh -c systemctl enable aws-eb.target
+2023/03/11 18:08:47.983944 [INFO] Running command /bin/sh -c systemctl start aws-eb.target
+2023/03/11 18:08:47.994839 [INFO] Running command /bin/sh -c systemctl enable cfn-hup.service
+2023/03/11 18:08:48.145383 [INFO] Created symlink from /etc/systemd/system/multi-user.target.wants/cfn-hup.service to /etc/systemd/system/cfn-hup.service.
+
+2023/03/11 18:08:48.145409 [INFO] Running command /bin/sh -c systemctl is-active cfn-hup.service
+2023/03/11 18:08:48.153348 [INFO] cfn-hup process is not running, starting it now
+2023/03/11 18:08:48.153364 [INFO] Running command /bin/sh -c systemctl show -p PartOf cfn-hup.service
+2023/03/11 18:08:48.164054 [INFO] Running command /bin/sh -c systemctl is-active cfn-hup.service
+2023/03/11 18:08:48.173140 [INFO] Running command /bin/sh -c systemctl start cfn-hup.service
+2023/03/11 18:08:48.254524 [INFO] Instance has NOT been bootstrapped
+2023/03/11 18:08:48.254539 [INFO] Executing instruction: SetupPublishLogCronjob
+2023/03/11 18:08:48.254543 [INFO] Setup publish logs cron job...
+2023/03/11 18:08:48.254548 [INFO] Copying file /opt/elasticbeanstalk/config/private/logtasks/cron/publishlogs to /etc/cron.d/publishlogs
+2023/03/11 18:08:48.256392 [INFO] Instance has NOT been bootstrapped
+2023/03/11 18:08:48.256401 [INFO] Executing instruction: MarkBootstrapped
+2023/03/11 18:08:48.256405 [INFO] Starting MarkBootstrapped
+2023/03/11 18:08:48.256411 [INFO] Instance has NOT been bootstrapped
+2023/03/11 18:08:48.256457 [INFO] Marked instance as Bootstrapped
+2023/03/11 18:08:48.256462 [INFO] Executing instruction: Save CFN Stack Info
+2023/03/11 18:08:48.256495 [INFO] Starting SwitchCFNStack
+2023/03/11 18:08:48.256501 [INFO] Executing cleanup logic
+2023/03/11 18:08:48.256514 [INFO] Platform Engine finished execution on command: env-launch
+
+2023/03/11 18:10:05.631100 [INFO] Starting...
+2023/03/11 18:10:05.631150 [INFO] Starting EBPlatform-PlatformEngine
+2023/03/11 18:10:05.631169 [INFO] reading event message file
+2023/03/11 18:10:05.631302 [INFO] Engine received EB command cfn-hup-exec
+
+2023/03/11 18:10:05.713733 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:174279880035:stack/awseb-e-wfvih94c9x-stack/93ac72c0-c037-11ed-b92c-0ea716131c1d -r AWSEBAutoScalingGroup --region us-east-1
+2023/03/11 18:10:06.078978 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:174279880035:stack/awseb-e-wfvih94c9x-stack/93ac72c0-c037-11ed-b92c-0ea716131c1d -r AWSEBBeanstalkMetadata --region us-east-1
+2023/03/11 18:10:06.429372 [INFO] checking whether command app-deploy is applicable to this instance...
+2023/03/11 18:10:06.429386 [INFO] this command is applicable to the instance, thus instance should execute command
+2023/03/11 18:10:06.429390 [INFO] Engine command: (app-deploy)
+
+2023/03/11 18:10:06.429397 [INFO] Downloading EB Application...
+2023/03/11 18:10:06.429401 [INFO] Region: us-east-1
+2023/03/11 18:10:06.429404 [INFO] envID: e-wfvih94c9x
+2023/03/11 18:10:06.429408 [INFO] envBucket: elasticbeanstalk-us-east-1-174279880035
+2023/03/11 18:10:06.429412 [INFO] Using manifest file name from command request
+2023/03/11 18:10:06.429420 [INFO] Unable to get version manifest file.
+2023/03/11 18:10:06.429423 [INFO] Downloading latest manifest available.
+2023/03/11 18:10:06.429432 [INFO] Download latest app version manifest
+2023/03/11 18:10:06.429507 [INFO] resources/environments/e-wfvih94c9x/_runtime/versions/manifest
+2023/03/11 18:10:06.479520 [INFO] latestManifest key *: resources/environments/e-wfvih94c9x/_runtime/versions/manifest_1678558044550
+
+2023/03/11 18:10:06.479693 [INFO] Downloading: bucket: elasticbeanstalk-us-east-1-174279880035, object: /resources/environments/e-wfvih94c9x/_runtime/versions/manifest_1678558044550
+2023/03/11 18:10:06.493315 [INFO] Download successful161bytes downloaded
+2023/03/11 18:10:06.493398 [INFO] Trying to read and parse version manifest...
+2023/03/11 18:10:06.493455 [INFO] Downloading: bucket: elasticbeanstalk-us-east-1-174279880035, object: /resources/environments/e-wfvih94c9x/_runtime/_versions/FoodDeliveryCapstone/fooddeliverycapstone-source
+2023/03/11 18:10:06.926672 [INFO] Download successful39014739bytes downloaded
+2023/03/11 18:10:06.927003 [INFO] Executing instruction: ElectLeader
+2023/03/11 18:10:06.927014 [INFO] Running leader election for instance i-0816207a8890fef05...
+2023/03/11 18:10:06.927018 [INFO] Calling the cfn-elect-cmd-leader to elect the command leader.
+2023/03/11 18:10:06.927036 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-elect-cmd-leader --stack arn:aws:cloudformation:us-east-1:174279880035:stack/awseb-e-wfvih94c9x-stack/93ac72c0-c037-11ed-b92c-0ea716131c1d --command-name ElasticBeanstalkCommand-AWSEBAutoScalingGroup --invocation-id d8bef07a-4530-43fd-a83d-2e2492c4009e --listener-id i-0816207a8890fef05 --region us-east-1
+2023/03/11 18:10:07.287948 [INFO] Instance is Leader.
+2023/03/11 18:10:07.288001 [INFO] Executing instruction: stopSqsd
+2023/03/11 18:10:07.288008 [INFO] This is a web server environment instance, skip stop sqsd daemon ...
+2023/03/11 18:10:07.288012 [INFO] Executing instruction: PreBuildEbExtension
+2023/03/11 18:10:07.288017 [INFO] Starting executing the config set Infra-EmbeddedPreBuild.
+2023/03/11 18:10:07.288032 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-init -s arn:aws:cloudformation:us-east-1:174279880035:stack/awseb-e-wfvih94c9x-stack/93ac72c0-c037-11ed-b92c-0ea716131c1d -r AWSEBAutoScalingGroup --region us-east-1 --configsets Infra-EmbeddedPreBuild
+2023/03/11 18:10:07.643159 [INFO] Finished executing the config set Infra-EmbeddedPreBuild.
+
+2023/03/11 18:10:07.643196 [INFO] Executing instruction: StageJavaApplication
+2023/03/11 18:10:07.643312 [INFO] Running command /bin/sh -c /usr/bin/file /opt/elasticbeanstalk/deployment/app_source_bundle
+2023/03/11 18:10:07.668417 [INFO] /opt/elasticbeanstalk/deployment/app_source_bundle: Java archive data (JAR)
+
+2023/03/11 18:10:07.668437 [INFO] app source bundle is jar file ...
+2023/03/11 18:10:07.668448 [INFO] rename app source bundle to application.jar ...
+2023/03/11 18:10:07.668453 [INFO] Copying file /opt/elasticbeanstalk/deployment/app_source_bundle to /var/app/staging/application.jar
+2023/03/11 18:10:07.793375 [INFO] Executing instruction: RunAppDeployPreBuildHooks
+2023/03/11 18:10:07.793449 [INFO] Running command /bin/sh -c uname -m
+2023/03/11 18:10:07.795219 [INFO] x86_64
+
+2023/03/11 18:10:07.795271 [INFO] Executing platform hooks in .platform/hooks/prebuild/
+2023/03/11 18:10:07.795289 [INFO] The dir .platform/hooks/prebuild/ does not exist
+2023/03/11 18:10:07.795293 [INFO] Finished running scripts in /var/app/staging/.platform/hooks/prebuild
+2023/03/11 18:10:07.795300 [INFO] Executing instruction: Java Specific Build Application
+2023/03/11 18:10:07.795308 [INFO] no buildfile found, skip building java application
+2023/03/11 18:10:07.795315 [INFO] old env file for build tasks does not exist
+2023/03/11 18:10:07.795319 [INFO] Executing instruction: CheckProcfileForJavaApplication
+2023/03/11 18:10:07.795449 [INFO] Executing instruction: configure X-Ray
+2023/03/11 18:10:07.795457 [INFO] X-Ray is not enabled.
+2023/03/11 18:10:07.795461 [INFO] Executing instruction: configure proxy server
+2023/03/11 18:10:07.801141 [INFO] Executing instruction: configure healthd specific proxy conf
+2023/03/11 18:10:07.802538 [INFO] Running command /bin/sh -c systemctl show -p PartOf healthd.service
+2023/03/11 18:10:07.808921 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2023/03/11 18:10:07.898021 [INFO] Running command /bin/sh -c systemctl reset-failed
+2023/03/11 18:10:07.902187 [INFO] Running command /bin/sh -c systemctl is-enabled aws-eb.target
+2023/03/11 18:10:07.905806 [INFO] Running command /bin/sh -c systemctl enable aws-eb.target
+2023/03/11 18:10:07.988006 [INFO] Running command /bin/sh -c systemctl start aws-eb.target
+2023/03/11 18:10:07.992542 [INFO] Running command /bin/sh -c systemctl enable healthd.service
+2023/03/11 18:10:08.084622 [INFO] Created symlink from /etc/systemd/system/multi-user.target.wants/healthd.service to /etc/systemd/system/healthd.service.
+
+2023/03/11 18:10:08.084655 [INFO] Running command /bin/sh -c systemctl show -p PartOf healthd.service
+2023/03/11 18:10:08.090112 [INFO] Running command /bin/sh -c systemctl is-active healthd.service
+2023/03/11 18:10:08.093822 [INFO] Running command /bin/sh -c systemctl start healthd.service
+2023/03/11 18:10:08.115259 [INFO] Copying file /opt/elasticbeanstalk/config/private/healthd/healthd_logformat.conf to /var/proxy/staging/nginx/conf.d/healthd_logformat.conf
+2023/03/11 18:10:08.116440 [INFO] Copying file /opt/elasticbeanstalk/config/private/healthd/healthd_nginx.conf to /var/proxy/staging/nginx/conf.d/elasticbeanstalk/healthd.conf
+2023/03/11 18:10:08.117660 [INFO] Executing instruction: configure log streaming
+2023/03/11 18:10:08.117669 [INFO] log streaming is not enabled
+2023/03/11 18:10:08.117673 [INFO] disable log stream
+2023/03/11 18:10:08.117686 [INFO] Running command /bin/sh -c systemctl show -p PartOf amazon-cloudwatch-agent.service
+2023/03/11 18:10:08.125414 [INFO] Running command /bin/sh -c systemctl stop amazon-cloudwatch-agent.service
+2023/03/11 18:10:08.132723 [INFO] Executing instruction: GetToggleForceRotate
+2023/03/11 18:10:08.132735 [INFO] Checking if logs need forced rotation
+2023/03/11 18:10:08.132746 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:174279880035:stack/awseb-e-wfvih94c9x-stack/93ac72c0-c037-11ed-b92c-0ea716131c1d -r AWSEBAutoScalingGroup --region us-east-1
+2023/03/11 18:10:08.612030 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:174279880035:stack/awseb-e-wfvih94c9x-stack/93ac72c0-c037-11ed-b92c-0ea716131c1d -r AWSEBBeanstalkMetadata --region us-east-1
+2023/03/11 18:10:09.092428 [INFO] Generating rsyslog config from Procfile
+2023/03/11 18:10:09.094102 [INFO] Running command /bin/sh -c systemctl restart rsyslog.service
+2023/03/11 18:10:09.116961 [INFO] Executing instruction: PostBuildEbExtension
+2023/03/11 18:10:09.116989 [INFO] Running command /bin/sh -c uname -m
+2023/03/11 18:10:09.119488 [INFO] x86_64
+
+2023/03/11 18:10:09.119520 [INFO] Starting executing the config set Infra-EmbeddedPostBuild.
+2023/03/11 18:10:09.119531 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-init -s arn:aws:cloudformation:us-east-1:174279880035:stack/awseb-e-wfvih94c9x-stack/93ac72c0-c037-11ed-b92c-0ea716131c1d -r AWSEBAutoScalingGroup --region us-east-1 --configsets Infra-EmbeddedPostBuild
+2023/03/11 18:10:09.626665 [INFO] Finished executing the config set Infra-EmbeddedPostBuild.
+
+2023/03/11 18:10:09.626686 [INFO] Executing instruction: CleanEbExtensions
+2023/03/11 18:10:09.626708 [INFO] Cleaned ebextensions subdirectories from app staging directory.
+2023/03/11 18:10:09.626712 [INFO] Executing instruction: RunAppDeployPreDeployHooks
+2023/03/11 18:10:09.626730 [INFO] Running command /bin/sh -c uname -m
+2023/03/11 18:10:09.628441 [INFO] x86_64
+
+2023/03/11 18:10:09.628475 [INFO] Executing platform hooks in .platform/hooks/predeploy/
+2023/03/11 18:10:09.628492 [INFO] The dir .platform/hooks/predeploy/ does not exist
+2023/03/11 18:10:09.628497 [INFO] Finished running scripts in /var/app/staging/.platform/hooks/predeploy
+2023/03/11 18:10:09.628504 [INFO] Executing instruction: stop X-Ray
+2023/03/11 18:10:09.628508 [INFO] stop X-Ray ...
+2023/03/11 18:10:09.628517 [INFO] Running command /bin/sh -c systemctl show -p PartOf xray.service
+2023/03/11 18:10:09.635733 [WARN] stopProcess Warning: process xray is not registered 
+2023/03/11 18:10:09.635750 [INFO] Running command /bin/sh -c systemctl stop xray.service
+2023/03/11 18:10:09.643793 [INFO] Executing instruction: stop proxy
+2023/03/11 18:10:09.643809 [INFO] Running command /bin/sh -c systemctl show -p PartOf httpd.service
+2023/03/11 18:10:09.648044 [WARN] deregisterProcess Warning: process httpd is not registered, skipping...
+
+2023/03/11 18:10:09.648059 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
+2023/03/11 18:10:09.654295 [WARN] deregisterProcess Warning: process nginx is not registered, skipping...
+
+2023/03/11 18:10:09.654307 [INFO] Executing instruction: FlipApplication
+2023/03/11 18:10:09.654311 [INFO] Fetching environment variables...
+2023/03/11 18:10:09.654324 [INFO] Running command /bin/sh -c uname -m
+2023/03/11 18:10:09.655849 [INFO] x86_64
+
+2023/03/11 18:10:09.655944 [INFO] Purge old process...
+2023/03/11 18:10:09.655957 [INFO] Removing /var/app/current/ if it exists
+2023/03/11 18:10:09.655966 [INFO] Renaming /var/app/staging/ to /var/app/current/
+2023/03/11 18:10:09.655986 [INFO] Register application processes...
+2023/03/11 18:10:09.655990 [INFO] Registering the proc: web
+
+2023/03/11 18:10:09.655998 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
+2023/03/11 18:10:09.662717 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2023/03/11 18:10:09.760646 [INFO] Running command /bin/sh -c systemctl reset-failed
+2023/03/11 18:10:09.765107 [INFO] Running command /bin/sh -c systemctl is-enabled eb-app.target
+2023/03/11 18:10:09.768682 [INFO] Copying file /opt/elasticbeanstalk/config/private/aws-eb.target to /etc/systemd/system/eb-app.target
+2023/03/11 18:10:09.770130 [INFO] Running command /bin/sh -c systemctl enable eb-app.target
+2023/03/11 18:10:09.859884 [INFO] Created symlink from /etc/systemd/system/multi-user.target.wants/eb-app.target to /etc/systemd/system/eb-app.target.
+
+2023/03/11 18:10:09.859926 [INFO] Running command /bin/sh -c systemctl start eb-app.target
+2023/03/11 18:10:09.865213 [INFO] Running command /bin/sh -c systemctl enable web.service
+2023/03/11 18:10:09.954600 [INFO] Created symlink from /etc/systemd/system/multi-user.target.wants/web.service to /etc/systemd/system/web.service.
+
+2023/03/11 18:10:09.954633 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
+2023/03/11 18:10:09.961925 [INFO] Running command /bin/sh -c systemctl is-active web.service
+2023/03/11 18:10:09.965356 [INFO] Running command /bin/sh -c systemctl start web.service
+2023/03/11 18:10:09.979468 [INFO] Executing instruction: start X-Ray
+2023/03/11 18:10:09.979482 [INFO] X-Ray is not enabled.
+2023/03/11 18:10:09.979487 [INFO] Executing instruction: start proxy with new configuration
+2023/03/11 18:10:09.979502 [INFO] Running command /bin/sh -c /usr/sbin/nginx -t -c /var/proxy/staging/nginx/nginx.conf
+2023/03/11 18:10:10.044986 [INFO] nginx: the configuration file /var/proxy/staging/nginx/nginx.conf syntax is ok
+nginx: configuration file /var/proxy/staging/nginx/nginx.conf test is successful
+
+2023/03/11 18:10:10.045065 [INFO] Running command /bin/sh -c cp -rp /var/proxy/staging/nginx/* /etc/nginx
+2023/03/11 18:10:10.049194 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
+2023/03/11 18:10:10.057690 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2023/03/11 18:10:10.156571 [INFO] Running command /bin/sh -c systemctl reset-failed
+2023/03/11 18:10:10.161150 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
+2023/03/11 18:10:10.166781 [INFO] Running command /bin/sh -c systemctl is-active nginx.service
+2023/03/11 18:10:10.170569 [INFO] Running command /bin/sh -c systemctl start nginx.service
+2023/03/11 18:10:10.209748 [INFO] Executing instruction: configureSqsd
+2023/03/11 18:10:10.209763 [INFO] This is a web server environment instance, skip configure sqsd daemon ...
+2023/03/11 18:10:10.209771 [INFO] Executing instruction: startSqsd
+2023/03/11 18:10:10.209784 [INFO] This is a web server environment instance, skip start sqsd daemon ...
+2023/03/11 18:10:10.209788 [INFO] Executing instruction: Track pids in healthd
+2023/03/11 18:10:10.209802 [INFO] This is an enhanced health env...
+2023/03/11 18:10:10.209815 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf aws-eb.target | cut -d= -f2
+2023/03/11 18:10:10.217341 [INFO] cfn-hup.service healthd.service nginx.service
+
+2023/03/11 18:10:10.217362 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf eb-app.target | cut -d= -f2
+2023/03/11 18:10:10.222211 [INFO] web.service
+
+2023/03/11 18:10:10.222324 [INFO] Executing instruction: RunAppDeployPostDeployHooks
+2023/03/11 18:10:10.222340 [INFO] Running command /bin/sh -c uname -m
+2023/03/11 18:10:10.223890 [INFO] x86_64
+
+2023/03/11 18:10:10.223911 [INFO] Executing platform hooks in .platform/hooks/postdeploy/
+2023/03/11 18:10:10.223925 [INFO] The dir .platform/hooks/postdeploy/ does not exist
+2023/03/11 18:10:10.223930 [INFO] Finished running scripts in /var/app/current/.platform/hooks/postdeploy
+2023/03/11 18:10:10.223937 [INFO] Executing cleanup logic
+2023/03/11 18:10:10.224033 [INFO] CommandService Response: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"Engine execution has succeeded.","returncode":0,"events":[{"msg":"Instance deployment successfully detected a JAR file in your source bundle.","timestamp":1678558207668,"severity":"INFO"},{"msg":"Instance deployment successfully generated a 'Procfile'.","timestamp":1678558207795,"severity":"INFO"},{"msg":"Instance deployment completed successfully.","timestamp":1678558210223,"severity":"INFO"}]}]}
+
+2023/03/11 18:10:10.224159 [INFO] Platform Engine finished execution on command: app-deploy
+
+2023/03/11 18:15:20.965374 [INFO] Starting...
+2023/03/11 18:15:20.965421 [INFO] Starting EBPlatform-PlatformEngine
+2023/03/11 18:15:20.965439 [INFO] reading event message file
+2023/03/11 18:15:20.965569 [INFO] Engine received EB command cfn-hup-exec
+
+2023/03/11 18:15:21.077364 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:174279880035:stack/awseb-e-wfvih94c9x-stack/93ac72c0-c037-11ed-b92c-0ea716131c1d -r AWSEBAutoScalingGroup --region us-east-1
+2023/03/11 18:15:22.005660 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:174279880035:stack/awseb-e-wfvih94c9x-stack/93ac72c0-c037-11ed-b92c-0ea716131c1d -r AWSEBBeanstalkMetadata --region us-east-1
+2023/03/11 18:15:22.936102 [INFO] checking whether command app-deploy is applicable to this instance...
+2023/03/11 18:15:22.936116 [INFO] this command is applicable to the instance, thus instance should execute command
+2023/03/11 18:15:22.936120 [INFO] Engine command: (app-deploy)
+
+2023/03/11 18:15:22.936126 [INFO] Downloading EB Application...
+2023/03/11 18:15:22.936130 [INFO] Region: us-east-1
+2023/03/11 18:15:22.936133 [INFO] envID: e-wfvih94c9x
+2023/03/11 18:15:22.936137 [INFO] envBucket: elasticbeanstalk-us-east-1-174279880035
+2023/03/11 18:15:22.936141 [INFO] Using manifest file name from command request
+2023/03/11 18:15:22.936148 [INFO] Manifest name is : manifest_1678558517988
+2023/03/11 18:15:22.936152 [INFO] Download app version manifest
+2023/03/11 18:15:22.936254 [INFO] Downloading: bucket: elasticbeanstalk-us-east-1-174279880035, object: /resources/environments/e-wfvih94c9x/_runtime/versions/manifest_1678558517988
+2023/03/11 18:15:22.978970 [INFO] Download successful118bytes downloaded
+2023/03/11 18:15:22.979113 [INFO] Trying to read and parse version manifest...
+2023/03/11 18:15:22.987741 [INFO] Downloading: bucket: elasticbeanstalk-us-east-1-174279880035, object: /resources/environments/e-wfvih94c9x/_runtime/_versions/FoodDeliveryCapstone/fooddeliverycapstone-source-1
+2023/03/11 18:15:23.744380 [INFO] Download successful39014739bytes downloaded
+2023/03/11 18:15:23.744619 [INFO] Executing instruction: ElectLeader
+2023/03/11 18:15:23.744627 [INFO] Running leader election for instance i-0816207a8890fef05...
+2023/03/11 18:15:23.744635 [INFO] Calling the cfn-elect-cmd-leader to elect the command leader.
+2023/03/11 18:15:23.744691 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-elect-cmd-leader --stack arn:aws:cloudformation:us-east-1:174279880035:stack/awseb-e-wfvih94c9x-stack/93ac72c0-c037-11ed-b92c-0ea716131c1d --command-name ElasticBeanstalkCommand-AWSEBAutoScalingGroup --invocation-id 95a3ebc1-0a3a-4e78-8be9-8cb96b4cdc1c --listener-id i-0816207a8890fef05 --region us-east-1
+2023/03/11 18:15:24.614988 [INFO] Instance is Leader.
+2023/03/11 18:15:24.615036 [INFO] Executing instruction: stopSqsd
+2023/03/11 18:15:24.615042 [INFO] This is a web server environment instance, skip stop sqsd daemon ...
+2023/03/11 18:15:24.615047 [INFO] Executing instruction: PreBuildEbExtension
+2023/03/11 18:15:24.615051 [INFO] Starting executing the config set Infra-EmbeddedPreBuild.
+2023/03/11 18:15:24.615065 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-init -s arn:aws:cloudformation:us-east-1:174279880035:stack/awseb-e-wfvih94c9x-stack/93ac72c0-c037-11ed-b92c-0ea716131c1d -r AWSEBAutoScalingGroup --region us-east-1 --configsets Infra-EmbeddedPreBuild
+2023/03/11 18:15:25.146610 [INFO] Finished executing the config set Infra-EmbeddedPreBuild.
+
+2023/03/11 18:15:25.146631 [INFO] Executing instruction: StageJavaApplication
+2023/03/11 18:15:25.274947 [INFO] Running command /bin/sh -c /usr/bin/file /opt/elasticbeanstalk/deployment/app_source_bundle
+2023/03/11 18:15:25.277588 [INFO] /opt/elasticbeanstalk/deployment/app_source_bundle: Java archive data (JAR)
+
+2023/03/11 18:15:25.277597 [INFO] app source bundle is jar file ...
+2023/03/11 18:15:25.277606 [INFO] rename app source bundle to application.jar ...
+2023/03/11 18:15:25.277616 [INFO] Copying file /opt/elasticbeanstalk/deployment/app_source_bundle to /var/app/staging/application.jar
+2023/03/11 18:15:25.495227 [INFO] Executing instruction: RunAppDeployPreBuildHooks
+2023/03/11 18:15:25.495257 [INFO] Running command /bin/sh -c uname -m
+2023/03/11 18:15:25.497012 [INFO] x86_64
+
+2023/03/11 18:15:25.497031 [INFO] Executing platform hooks in .platform/hooks/prebuild/
+2023/03/11 18:15:25.497048 [INFO] The dir .platform/hooks/prebuild/ does not exist
+2023/03/11 18:15:25.497053 [INFO] Finished running scripts in /var/app/staging/.platform/hooks/prebuild
+2023/03/11 18:15:25.497059 [INFO] Executing instruction: Java Specific Build Application
+2023/03/11 18:15:25.497067 [INFO] no buildfile found, skip building java application
+2023/03/11 18:15:25.497073 [INFO] old env file for build tasks does not exist
+2023/03/11 18:15:25.497077 [INFO] Executing instruction: CheckProcfileForJavaApplication
+2023/03/11 18:15:25.497214 [INFO] Executing instruction: configure X-Ray
+2023/03/11 18:15:25.497221 [INFO] X-Ray is not enabled.
+2023/03/11 18:15:25.497225 [INFO] Executing instruction: configure proxy server
+2023/03/11 18:15:25.509775 [INFO] Executing instruction: configure healthd specific proxy conf
+2023/03/11 18:15:25.513944 [INFO] Running command /bin/sh -c systemctl show -p PartOf healthd.service
+2023/03/11 18:15:25.518825 [WARN] Warning: process healthd is already registered...
+Deregistering the process ...
+2023/03/11 18:15:25.518842 [INFO] Running command /bin/sh -c systemctl show -p PartOf healthd.service
+2023/03/11 18:15:25.523063 [INFO] Running command /bin/sh -c systemctl is-active healthd.service
+2023/03/11 18:15:25.529636 [INFO] Running command /bin/sh -c systemctl show -p PartOf healthd.service
+2023/03/11 18:15:25.538856 [INFO] Running command /bin/sh -c systemctl stop healthd.service
+2023/03/11 18:15:25.555474 [INFO] Running command /bin/sh -c systemctl disable healthd.service
+2023/03/11 18:15:25.654586 [INFO] Removed symlink /etc/systemd/system/multi-user.target.wants/healthd.service.
+
+2023/03/11 18:15:25.654678 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2023/03/11 18:15:25.858502 [INFO] Running command /bin/sh -c systemctl reset-failed
+2023/03/11 18:15:25.866943 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2023/03/11 18:15:26.043860 [INFO] Running command /bin/sh -c systemctl reset-failed
+2023/03/11 18:15:26.055853 [INFO] Running command /bin/sh -c systemctl is-enabled aws-eb.target
+2023/03/11 18:15:26.063878 [INFO] Running command /bin/sh -c systemctl enable aws-eb.target
+2023/03/11 18:15:26.229746 [INFO] Running command /bin/sh -c systemctl start aws-eb.target
+2023/03/11 18:15:26.243519 [INFO] Running command /bin/sh -c systemctl enable healthd.service
+2023/03/11 18:15:26.419297 [INFO] Created symlink from /etc/systemd/system/multi-user.target.wants/healthd.service to /etc/systemd/system/healthd.service.
+
+2023/03/11 18:15:26.419329 [INFO] Running command /bin/sh -c systemctl show -p PartOf healthd.service
+2023/03/11 18:15:26.436678 [INFO] Running command /bin/sh -c systemctl is-active healthd.service
+2023/03/11 18:15:26.451795 [INFO] Running command /bin/sh -c systemctl start healthd.service
+2023/03/11 18:15:26.493181 [INFO] Copying file /opt/elasticbeanstalk/config/private/healthd/healthd_logformat.conf to /var/proxy/staging/nginx/conf.d/healthd_logformat.conf
+2023/03/11 18:15:26.494519 [INFO] Copying file /opt/elasticbeanstalk/config/private/healthd/healthd_nginx.conf to /var/proxy/staging/nginx/conf.d/elasticbeanstalk/healthd.conf
+2023/03/11 18:15:26.496151 [INFO] Executing instruction: configure log streaming
+2023/03/11 18:15:26.496161 [INFO] log streaming is not enabled
+2023/03/11 18:15:26.496165 [INFO] disable log stream
+2023/03/11 18:15:26.496178 [INFO] Running command /bin/sh -c systemctl show -p PartOf amazon-cloudwatch-agent.service
+2023/03/11 18:15:26.517244 [INFO] Running command /bin/sh -c systemctl stop amazon-cloudwatch-agent.service
+2023/03/11 18:15:26.534988 [INFO] Executing instruction: GetToggleForceRotate
+2023/03/11 18:15:26.535008 [INFO] Checking if logs need forced rotation
+2023/03/11 18:15:26.535040 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:174279880035:stack/awseb-e-wfvih94c9x-stack/93ac72c0-c037-11ed-b92c-0ea716131c1d -r AWSEBAutoScalingGroup --region us-east-1
+2023/03/11 18:15:27.771692 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:174279880035:stack/awseb-e-wfvih94c9x-stack/93ac72c0-c037-11ed-b92c-0ea716131c1d -r AWSEBBeanstalkMetadata --region us-east-1
+2023/03/11 18:15:28.933176 [INFO] Generating rsyslog config from Procfile
+2023/03/11 18:15:28.935291 [INFO] Running command /bin/sh -c systemctl restart rsyslog.service
+2023/03/11 18:15:28.964822 [INFO] Executing instruction: PostBuildEbExtension
+2023/03/11 18:15:28.964845 [INFO] Running command /bin/sh -c uname -m
+2023/03/11 18:15:28.971640 [INFO] x86_64
+
+2023/03/11 18:15:28.971673 [INFO] Starting executing the config set Infra-EmbeddedPostBuild.
+2023/03/11 18:15:28.971687 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-init -s arn:aws:cloudformation:us-east-1:174279880035:stack/awseb-e-wfvih94c9x-stack/93ac72c0-c037-11ed-b92c-0ea716131c1d -r AWSEBAutoScalingGroup --region us-east-1 --configsets Infra-EmbeddedPostBuild
+2023/03/11 18:15:29.847981 [INFO] Finished executing the config set Infra-EmbeddedPostBuild.
+
+2023/03/11 18:15:29.848016 [INFO] Executing instruction: CleanEbExtensions
+2023/03/11 18:15:29.848039 [INFO] Cleaned ebextensions subdirectories from app staging directory.
+2023/03/11 18:15:29.848044 [INFO] Executing instruction: RunAppDeployPreDeployHooks
+2023/03/11 18:15:29.848059 [INFO] Running command /bin/sh -c uname -m
+2023/03/11 18:15:29.849734 [INFO] x86_64
+
+2023/03/11 18:15:29.849766 [INFO] Executing platform hooks in .platform/hooks/predeploy/
+2023/03/11 18:15:29.849781 [INFO] The dir .platform/hooks/predeploy/ does not exist
+2023/03/11 18:15:29.849787 [INFO] Finished running scripts in /var/app/staging/.platform/hooks/predeploy
+2023/03/11 18:15:29.849794 [INFO] Executing instruction: stop X-Ray
+2023/03/11 18:15:29.849797 [INFO] stop X-Ray ...
+2023/03/11 18:15:29.849805 [INFO] Running command /bin/sh -c systemctl show -p PartOf xray.service
+2023/03/11 18:15:29.856708 [WARN] stopProcess Warning: process xray is not registered 
+2023/03/11 18:15:29.856722 [INFO] Running command /bin/sh -c systemctl stop xray.service
+2023/03/11 18:15:29.865412 [INFO] Executing instruction: stop proxy
+2023/03/11 18:15:29.865428 [INFO] Running command /bin/sh -c systemctl show -p PartOf httpd.service
+2023/03/11 18:15:29.869820 [WARN] deregisterProcess Warning: process httpd is not registered, skipping...
+
+2023/03/11 18:15:29.869835 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
+2023/03/11 18:15:29.874417 [INFO] Running command /bin/sh -c systemctl is-active nginx.service
+2023/03/11 18:15:29.877908 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
+2023/03/11 18:15:29.882100 [INFO] Running command /bin/sh -c systemctl stop nginx.service
+2023/03/11 18:15:29.919375 [INFO] Running command /bin/sh -c systemctl disable nginx.service
+2023/03/11 18:15:30.087473 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2023/03/11 18:15:30.258846 [INFO] Running command /bin/sh -c systemctl reset-failed
+2023/03/11 18:15:30.271551 [INFO] Executing instruction: FlipApplication
+2023/03/11 18:15:30.271568 [INFO] Fetching environment variables...
+2023/03/11 18:15:30.271584 [INFO] Running command /bin/sh -c uname -m
+2023/03/11 18:15:30.276869 [INFO] x86_64
+
+2023/03/11 18:15:30.277022 [INFO] Purge old process...
+2023/03/11 18:15:30.277039 [INFO] Running command /bin/sh -c systemctl stop eb-app.target
+2023/03/11 18:15:30.294623 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf eb-app.target | cut -d= -f2
+2023/03/11 18:15:30.303451 [INFO] web.service
+
+2023/03/11 18:15:30.303465 [INFO] deregistering process: web
+2023/03/11 18:15:30.303474 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
+2023/03/11 18:15:30.307918 [INFO] Running command /bin/sh -c systemctl is-active web.service
+2023/03/11 18:15:30.315030 [INFO] Running command /bin/sh -c systemctl disable web.service
+2023/03/11 18:15:30.426728 [INFO] Removed symlink /etc/systemd/system/multi-user.target.wants/web.service.
+
+2023/03/11 18:15:30.426962 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2023/03/11 18:15:30.533897 [INFO] Running command /bin/sh -c systemctl reset-failed
+2023/03/11 18:15:30.538353 [INFO] Running command /bin/sh -c systemctl is-active web.service
+2023/03/11 18:15:30.541801 [INFO] Process web has been fully terminated
+2023/03/11 18:15:30.541813 [INFO] All processes have been fully terminated
+2023/03/11 18:15:30.541818 [INFO] Removing /var/app/current/ if it exists
+2023/03/11 18:15:30.546324 [INFO] Renaming /var/app/staging/ to /var/app/current/
+2023/03/11 18:15:30.546348 [INFO] Register application processes...
+2023/03/11 18:15:30.546355 [INFO] Registering the proc: web
+
+2023/03/11 18:15:30.546363 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
+2023/03/11 18:15:30.553178 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2023/03/11 18:15:30.638251 [INFO] Running command /bin/sh -c systemctl reset-failed
+2023/03/11 18:15:30.642337 [INFO] Running command /bin/sh -c systemctl is-enabled eb-app.target
+2023/03/11 18:15:30.645965 [INFO] Running command /bin/sh -c systemctl enable eb-app.target
+2023/03/11 18:15:30.729120 [INFO] Running command /bin/sh -c systemctl start eb-app.target
+2023/03/11 18:15:30.734371 [INFO] Running command /bin/sh -c systemctl enable web.service
+2023/03/11 18:15:30.826381 [INFO] Created symlink from /etc/systemd/system/multi-user.target.wants/web.service to /etc/systemd/system/web.service.
+
+2023/03/11 18:15:30.826415 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
+2023/03/11 18:15:30.831710 [INFO] Running command /bin/sh -c systemctl is-active web.service
+2023/03/11 18:15:30.835223 [INFO] Running command /bin/sh -c systemctl start web.service
+2023/03/11 18:15:30.853770 [INFO] Executing instruction: start X-Ray
+2023/03/11 18:15:30.853784 [INFO] X-Ray is not enabled.
+2023/03/11 18:15:30.853789 [INFO] Executing instruction: start proxy with new configuration
+2023/03/11 18:15:30.853806 [INFO] Running command /bin/sh -c /usr/sbin/nginx -t -c /var/proxy/staging/nginx/nginx.conf
+2023/03/11 18:15:30.866784 [INFO] nginx: the configuration file /var/proxy/staging/nginx/nginx.conf syntax is ok
+nginx: configuration file /var/proxy/staging/nginx/nginx.conf test is successful
+
+2023/03/11 18:15:30.867024 [INFO] Running command /bin/sh -c cp -rp /var/proxy/staging/nginx/* /etc/nginx
+2023/03/11 18:15:30.872480 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
+2023/03/11 18:15:30.883097 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2023/03/11 18:15:31.027880 [INFO] Running command /bin/sh -c systemctl reset-failed
+2023/03/11 18:15:31.039632 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
+2023/03/11 18:15:31.054761 [INFO] Running command /bin/sh -c systemctl is-active nginx.service
+2023/03/11 18:15:31.064585 [INFO] Running command /bin/sh -c systemctl start nginx.service
+2023/03/11 18:15:31.152779 [INFO] Executing instruction: configureSqsd
+2023/03/11 18:15:31.152795 [INFO] This is a web server environment instance, skip configure sqsd daemon ...
+2023/03/11 18:15:31.152799 [INFO] Executing instruction: startSqsd
+2023/03/11 18:15:31.152803 [INFO] This is a web server environment instance, skip start sqsd daemon ...
+2023/03/11 18:15:31.152808 [INFO] Executing instruction: Track pids in healthd
+2023/03/11 18:15:31.152812 [INFO] This is an enhanced health env...
+2023/03/11 18:15:31.152825 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf aws-eb.target | cut -d= -f2
+2023/03/11 18:15:31.171604 [INFO] nginx.service cfn-hup.service healthd.service
+
+2023/03/11 18:15:31.171632 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf eb-app.target | cut -d= -f2
+2023/03/11 18:15:31.185861 [INFO] web.service
+
+2023/03/11 18:15:31.186025 [INFO] Executing instruction: RunAppDeployPostDeployHooks
+2023/03/11 18:15:31.186043 [INFO] Running command /bin/sh -c uname -m
+2023/03/11 18:15:31.196190 [INFO] x86_64
+
+2023/03/11 18:15:31.196227 [INFO] Executing platform hooks in .platform/hooks/postdeploy/
+2023/03/11 18:15:31.196241 [INFO] The dir .platform/hooks/postdeploy/ does not exist
+2023/03/11 18:15:31.196246 [INFO] Finished running scripts in /var/app/current/.platform/hooks/postdeploy
+2023/03/11 18:15:31.196252 [INFO] Executing cleanup logic
+2023/03/11 18:15:31.196339 [INFO] CommandService Response: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"Engine execution has succeeded.","returncode":0,"events":[{"msg":"Instance deployment successfully detected a JAR file in your source bundle.","timestamp":1678558525277,"severity":"INFO"},{"msg":"Instance deployment successfully generated a 'Procfile'.","timestamp":1678558525497,"severity":"INFO"},{"msg":"Instance deployment completed successfully.","timestamp":1678558531196,"severity":"INFO"}]}]}
+
+2023/03/11 18:15:31.197244 [INFO] Platform Engine finished execution on command: app-deploy
+
+2023/03/11 18:24:48.189090 [INFO] Starting...
+2023/03/11 18:24:48.189148 [INFO] Starting EBPlatform-PlatformEngine
+2023/03/11 18:24:48.189166 [INFO] reading event message file
+2023/03/11 18:24:48.189290 [INFO] Engine received EB command cfn-hup-exec
+
+2023/03/11 18:24:48.304990 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:174279880035:stack/awseb-e-wfvih94c9x-stack/93ac72c0-c037-11ed-b92c-0ea716131c1d -r AWSEBAutoScalingGroup --region us-east-1
+2023/03/11 18:24:49.219569 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:174279880035:stack/awseb-e-wfvih94c9x-stack/93ac72c0-c037-11ed-b92c-0ea716131c1d -r AWSEBBeanstalkMetadata --region us-east-1
+2023/03/11 18:24:49.633142 [INFO] checking whether command config-deploy is applicable to this instance...
+2023/03/11 18:24:49.633157 [INFO] this command is applicable to the instance, thus instance should execute command
+2023/03/11 18:24:49.633161 [INFO] Engine command: (config-deploy)
+
+2023/03/11 18:24:49.633168 [INFO] Using manifest file name from command request
+2023/03/11 18:24:49.633174 [INFO] Unable to get version manifest file.
+2023/03/11 18:24:49.633178 [INFO] Downloading latest manifest available.
+2023/03/11 18:24:49.633187 [INFO] Download latest app version manifest
+2023/03/11 18:24:49.633263 [INFO] resources/environments/e-wfvih94c9x/_runtime/versions/manifest
+2023/03/11 18:24:49.684908 [INFO] latestManifest key *: resources/environments/e-wfvih94c9x/_runtime/versions/manifest_1678559050064
+
+2023/03/11 18:24:49.685424 [INFO] Downloading: bucket: elasticbeanstalk-us-east-1-174279880035, object: /resources/environments/e-wfvih94c9x/_runtime/versions/manifest_1678559050064
+2023/03/11 18:24:49.708315 [INFO] Download successful165bytes downloaded
+2023/03/11 18:24:49.708438 [INFO] Trying to read and parse version manifest...
+2023/03/11 18:24:49.708596 [INFO] Executing instruction: stopSqsd
+2023/03/11 18:24:49.708602 [INFO] This is a web server environment instance, skip stop sqsd daemon ...
+2023/03/11 18:24:49.708606 [INFO] Executing instruction: StageJavaApplication
+2023/03/11 18:24:49.708681 [INFO] Running command /bin/sh -c /usr/bin/file /opt/elasticbeanstalk/deployment/app_source_bundle
+2023/03/11 18:24:49.711191 [INFO] /opt/elasticbeanstalk/deployment/app_source_bundle: Java archive data (JAR)
+
+2023/03/11 18:24:49.711202 [INFO] app source bundle is jar file ...
+2023/03/11 18:24:49.711210 [INFO] rename app source bundle to application.jar ...
+2023/03/11 18:24:49.711215 [INFO] Copying file /opt/elasticbeanstalk/deployment/app_source_bundle to /var/app/staging/application.jar
+2023/03/11 18:24:49.926202 [INFO] Executing instruction: RunConfigDeployPreBuildHooks
+2023/03/11 18:24:49.926229 [INFO] Running command /bin/sh -c uname -m
+2023/03/11 18:24:49.927954 [INFO] x86_64
+
+2023/03/11 18:24:49.927977 [INFO] Executing platform hooks in .platform/confighooks/prebuild/
+2023/03/11 18:24:49.928013 [INFO] The dir .platform/confighooks/prebuild/ does not exist
+2023/03/11 18:24:49.928019 [INFO] Finished running scripts in /var/app/staging/.platform/confighooks/prebuild
+2023/03/11 18:24:49.928026 [INFO] Executing instruction: Java Specific Build Application
+2023/03/11 18:24:49.928033 [INFO] no buildfile found, skip building java application
+2023/03/11 18:24:49.928038 [INFO] old env file for build tasks does not exist
+2023/03/11 18:24:49.928042 [INFO] Executing instruction: CheckProcfileForJavaApplication
+2023/03/11 18:24:49.928184 [INFO] Executing instruction: configure X-Ray
+2023/03/11 18:24:49.928190 [INFO] X-Ray is not enabled.
+2023/03/11 18:24:49.928194 [INFO] Executing instruction: configure proxy server
+2023/03/11 18:24:49.935643 [INFO] Executing instruction: configure healthd specific proxy conf
+2023/03/11 18:24:49.937785 [INFO] Running command /bin/sh -c systemctl show -p PartOf healthd.service
+2023/03/11 18:24:49.942521 [WARN] Warning: process healthd is already registered...
+Deregistering the process ...
+2023/03/11 18:24:49.942536 [INFO] Running command /bin/sh -c systemctl show -p PartOf healthd.service
+2023/03/11 18:24:49.946783 [INFO] Running command /bin/sh -c systemctl is-active healthd.service
+2023/03/11 18:24:49.950318 [INFO] Running command /bin/sh -c systemctl show -p PartOf healthd.service
+2023/03/11 18:24:49.954346 [INFO] Running command /bin/sh -c systemctl stop healthd.service
+2023/03/11 18:24:49.968463 [INFO] Running command /bin/sh -c systemctl disable healthd.service
+2023/03/11 18:24:50.074842 [INFO] Removed symlink /etc/systemd/system/multi-user.target.wants/healthd.service.
+
+2023/03/11 18:24:50.074964 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2023/03/11 18:24:50.182524 [INFO] Running command /bin/sh -c systemctl reset-failed
+2023/03/11 18:24:50.190675 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2023/03/11 18:24:50.290097 [INFO] Running command /bin/sh -c systemctl reset-failed
+2023/03/11 18:24:50.304536 [INFO] Running command /bin/sh -c systemctl is-enabled aws-eb.target
+2023/03/11 18:24:50.323960 [INFO] Running command /bin/sh -c systemctl enable aws-eb.target
+2023/03/11 18:24:50.515686 [INFO] Running command /bin/sh -c systemctl start aws-eb.target
+2023/03/11 18:24:50.528064 [INFO] Running command /bin/sh -c systemctl enable healthd.service
+2023/03/11 18:24:50.688010 [INFO] Created symlink from /etc/systemd/system/multi-user.target.wants/healthd.service to /etc/systemd/system/healthd.service.
+
+2023/03/11 18:24:50.688042 [INFO] Running command /bin/sh -c systemctl show -p PartOf healthd.service
+2023/03/11 18:24:50.695102 [INFO] Running command /bin/sh -c systemctl is-active healthd.service
+2023/03/11 18:24:50.702954 [INFO] Running command /bin/sh -c systemctl start healthd.service
+2023/03/11 18:24:50.737820 [INFO] Copying file /opt/elasticbeanstalk/config/private/healthd/healthd_logformat.conf to /var/proxy/staging/nginx/conf.d/healthd_logformat.conf
+2023/03/11 18:24:50.740313 [INFO] Copying file /opt/elasticbeanstalk/config/private/healthd/healthd_nginx.conf to /var/proxy/staging/nginx/conf.d/elasticbeanstalk/healthd.conf
+2023/03/11 18:24:50.741643 [INFO] Executing instruction: configure log streaming
+2023/03/11 18:24:50.741653 [INFO] log streaming is not enabled
+2023/03/11 18:24:50.741656 [INFO] disable log stream
+2023/03/11 18:24:50.741668 [INFO] Running command /bin/sh -c systemctl show -p PartOf amazon-cloudwatch-agent.service
+2023/03/11 18:24:50.762973 [INFO] Running command /bin/sh -c systemctl stop amazon-cloudwatch-agent.service
+2023/03/11 18:24:50.783463 [INFO] Executing instruction: GetToggleForceRotate
+2023/03/11 18:24:50.783479 [INFO] Checking if logs need forced rotation
+2023/03/11 18:24:50.783500 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:174279880035:stack/awseb-e-wfvih94c9x-stack/93ac72c0-c037-11ed-b92c-0ea716131c1d -r AWSEBAutoScalingGroup --region us-east-1
+2023/03/11 18:24:51.977348 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:174279880035:stack/awseb-e-wfvih94c9x-stack/93ac72c0-c037-11ed-b92c-0ea716131c1d -r AWSEBBeanstalkMetadata --region us-east-1
+2023/03/11 18:24:53.070964 [INFO] Generating rsyslog config from Procfile
+2023/03/11 18:24:53.072420 [INFO] Running command /bin/sh -c systemctl restart rsyslog.service
+2023/03/11 18:24:53.100132 [INFO] Executing instruction: CleanEbExtensions
+2023/03/11 18:24:53.100162 [INFO] Cleaned ebextensions subdirectories from app staging directory.
+2023/03/11 18:24:53.100167 [INFO] Executing instruction: RunConfigDeployPreDeployHooks
+2023/03/11 18:24:53.100182 [INFO] Running command /bin/sh -c uname -m
+2023/03/11 18:24:53.104234 [INFO] x86_64
+
+2023/03/11 18:24:53.104281 [INFO] Executing platform hooks in .platform/confighooks/predeploy/
+2023/03/11 18:24:53.104298 [INFO] The dir .platform/confighooks/predeploy/ does not exist
+2023/03/11 18:24:53.104302 [INFO] Finished running scripts in /var/app/staging/.platform/confighooks/predeploy
+2023/03/11 18:24:53.104310 [INFO] Executing instruction: stop X-Ray
+2023/03/11 18:24:53.104313 [INFO] stop X-Ray ...
+2023/03/11 18:24:53.104323 [INFO] Running command /bin/sh -c systemctl show -p PartOf xray.service
+2023/03/11 18:24:53.115126 [WARN] stopProcess Warning: process xray is not registered 
+2023/03/11 18:24:53.115144 [INFO] Running command /bin/sh -c systemctl stop xray.service
+2023/03/11 18:24:53.127761 [INFO] Executing instruction: stop proxy
+2023/03/11 18:24:53.127781 [INFO] Running command /bin/sh -c systemctl show -p PartOf httpd.service
+2023/03/11 18:24:53.137854 [WARN] deregisterProcess Warning: process httpd is not registered, skipping...
+
+2023/03/11 18:24:53.137874 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
+2023/03/11 18:24:53.143478 [INFO] Running command /bin/sh -c systemctl is-active nginx.service
+2023/03/11 18:24:53.146929 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
+2023/03/11 18:24:53.151055 [INFO] Running command /bin/sh -c systemctl stop nginx.service
+2023/03/11 18:24:53.174599 [INFO] Running command /bin/sh -c systemctl disable nginx.service
+2023/03/11 18:24:53.281354 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2023/03/11 18:24:53.380788 [INFO] Running command /bin/sh -c systemctl reset-failed
+2023/03/11 18:24:53.385141 [INFO] Executing instruction: FlipApplication
+2023/03/11 18:24:53.385176 [INFO] Fetching environment variables...
+2023/03/11 18:24:53.385204 [INFO] Running command /bin/sh -c uname -m
+2023/03/11 18:24:53.386689 [INFO] x86_64
+
+2023/03/11 18:24:53.386821 [INFO] Purge old process...
+2023/03/11 18:24:53.386837 [INFO] Running command /bin/sh -c systemctl stop eb-app.target
+2023/03/11 18:24:53.392203 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf eb-app.target | cut -d= -f2
+2023/03/11 18:24:53.398585 [INFO] web.service
+
+2023/03/11 18:24:53.398596 [INFO] deregistering process: web
+2023/03/11 18:24:53.398604 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
+2023/03/11 18:24:53.402731 [INFO] Running command /bin/sh -c systemctl is-active web.service
+2023/03/11 18:24:53.406206 [INFO] Running command /bin/sh -c systemctl disable web.service
+2023/03/11 18:24:53.510238 [INFO] Removed symlink /etc/systemd/system/multi-user.target.wants/web.service.
+
+2023/03/11 18:24:53.510327 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2023/03/11 18:24:53.605743 [INFO] Running command /bin/sh -c systemctl reset-failed
+2023/03/11 18:24:53.609998 [INFO] Running command /bin/sh -c systemctl is-active web.service
+2023/03/11 18:24:53.613534 [INFO] Process web has not been fully terminated
+2023/03/11 18:24:53.613546 [INFO] Some processes have not been fully terminated, sleeping 1 seconds now
+2023/03/11 18:24:54.613592 [INFO] Running command /bin/sh -c systemctl is-active web.service
+2023/03/11 18:24:54.617653 [INFO] Process web has been fully terminated
+2023/03/11 18:24:54.617666 [INFO] All processes have been fully terminated
+2023/03/11 18:24:54.617671 [INFO] Removing /var/app/current/ if it exists
+2023/03/11 18:24:54.622106 [INFO] Renaming /var/app/staging/ to /var/app/current/
+2023/03/11 18:24:54.622127 [INFO] Register application processes...
+2023/03/11 18:24:54.622133 [INFO] Registering the proc: web
+
+2023/03/11 18:24:54.622142 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
+2023/03/11 18:24:54.628248 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2023/03/11 18:24:54.713159 [INFO] Running command /bin/sh -c systemctl reset-failed
+2023/03/11 18:24:54.717651 [INFO] Running command /bin/sh -c systemctl is-enabled eb-app.target
+2023/03/11 18:24:54.721267 [INFO] Running command /bin/sh -c systemctl enable eb-app.target
+2023/03/11 18:24:54.805087 [INFO] Running command /bin/sh -c systemctl start eb-app.target
+2023/03/11 18:24:54.810481 [INFO] Running command /bin/sh -c systemctl enable web.service
+2023/03/11 18:24:54.900715 [INFO] Created symlink from /etc/systemd/system/multi-user.target.wants/web.service to /etc/systemd/system/web.service.
+
+2023/03/11 18:24:54.900760 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
+2023/03/11 18:24:54.906050 [INFO] Running command /bin/sh -c systemctl is-active web.service
+2023/03/11 18:24:54.909449 [INFO] Running command /bin/sh -c systemctl start web.service
+2023/03/11 18:24:54.928336 [INFO] Executing instruction: start X-Ray
+2023/03/11 18:24:54.928349 [INFO] X-Ray is not enabled.
+2023/03/11 18:24:54.928354 [INFO] Executing instruction: start proxy with new configuration
+2023/03/11 18:24:54.928370 [INFO] Running command /bin/sh -c /usr/sbin/nginx -t -c /var/proxy/staging/nginx/nginx.conf
+2023/03/11 18:24:54.941279 [INFO] nginx: the configuration file /var/proxy/staging/nginx/nginx.conf syntax is ok
+nginx: configuration file /var/proxy/staging/nginx/nginx.conf test is successful
+
+2023/03/11 18:24:54.941494 [INFO] Running command /bin/sh -c cp -rp /var/proxy/staging/nginx/* /etc/nginx
+2023/03/11 18:24:54.947667 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
+2023/03/11 18:24:54.958633 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2023/03/11 18:24:55.103170 [INFO] Running command /bin/sh -c systemctl reset-failed
+2023/03/11 18:24:55.110961 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
+2023/03/11 18:24:55.127470 [INFO] Running command /bin/sh -c systemctl is-active nginx.service
+2023/03/11 18:24:55.135656 [INFO] Running command /bin/sh -c systemctl start nginx.service
+2023/03/11 18:24:55.237700 [INFO] Executing instruction: configureSqsd
+2023/03/11 18:24:55.237715 [INFO] This is a web server environment instance, skip configure sqsd daemon ...
+2023/03/11 18:24:55.237720 [INFO] Executing instruction: startSqsd
+2023/03/11 18:24:55.237723 [INFO] This is a web server environment instance, skip start sqsd daemon ...
+2023/03/11 18:24:55.237728 [INFO] Executing instruction: Track pids in healthd
+2023/03/11 18:24:55.237732 [INFO] This is an enhanced health env...
+2023/03/11 18:24:55.237744 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf aws-eb.target | cut -d= -f2
+2023/03/11 18:24:55.255348 [INFO] healthd.service cfn-hup.service nginx.service
+
+2023/03/11 18:24:55.255374 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf eb-app.target | cut -d= -f2
+2023/03/11 18:24:55.275246 [INFO] web.service
+
+2023/03/11 18:24:55.275398 [INFO] Executing instruction: RunConfigDeployPostDeployHooks
+2023/03/11 18:24:55.275416 [INFO] Running command /bin/sh -c uname -m
+2023/03/11 18:24:55.282157 [INFO] x86_64
+
+2023/03/11 18:24:55.282180 [INFO] Executing platform hooks in .platform/confighooks/postdeploy/
+2023/03/11 18:24:55.282194 [INFO] The dir .platform/confighooks/postdeploy/ does not exist
+2023/03/11 18:24:55.282199 [INFO] Finished running scripts in /var/app/current/.platform/confighooks/postdeploy
+2023/03/11 18:24:55.282206 [INFO] Executing cleanup logic
+2023/03/11 18:24:55.282307 [INFO] CommandService Response: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"Engine execution has succeeded.","returncode":0,"events":[{"msg":"Instance deployment successfully detected a JAR file in your source bundle.","timestamp":1678559089711,"severity":"INFO"},{"msg":"Instance deployment successfully generated a 'Procfile'.","timestamp":1678559089928,"severity":"INFO"},{"msg":"Instance deployment completed successfully.","timestamp":1678559095282,"severity":"INFO"}]}]}
+
+2023/03/11 18:24:55.283541 [INFO] Platform Engine finished execution on command: config-deploy
+
+2023/03/11 18:28:53.049519 [INFO] Starting...
+2023/03/11 18:28:53.049565 [INFO] Starting EBPlatform-PlatformEngine
+2023/03/11 18:28:53.049583 [INFO] reading event message file
+2023/03/11 18:28:53.049709 [INFO] Engine received EB command cfn-hup-exec
+
+2023/03/11 18:28:53.163450 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:174279880035:stack/awseb-e-wfvih94c9x-stack/93ac72c0-c037-11ed-b92c-0ea716131c1d -r AWSEBAutoScalingGroup --region us-east-1
+2023/03/11 18:28:54.215494 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:174279880035:stack/awseb-e-wfvih94c9x-stack/93ac72c0-c037-11ed-b92c-0ea716131c1d -r AWSEBBeanstalkMetadata --region us-east-1
+2023/03/11 18:28:55.230348 [INFO] checking whether command bundle-log is applicable to this instance...
+2023/03/11 18:28:55.230362 [INFO] this command is applicable to the instance, thus instance should execute command
+2023/03/11 18:28:55.230366 [INFO] Engine command: (bundle-log)
+
+2023/03/11 18:28:55.230419 [INFO] Executing instruction: GetBundleLogs
+2023/03/11 18:28:55.230425 [INFO] Bundle Logs...

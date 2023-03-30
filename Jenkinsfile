@@ -5,11 +5,6 @@ pipeline {
 	stages {
 		stage('Build') {
 			steps {
-			//Get code from GitHub repository
-			//git (branch: 'main', url: 'https://github.com/lothoroger/capstone2023fdsfood.git')
-			
-			//Run maven wrapper - 2/20
-			//bat  "mvn compile"
 			sh 'chmod +x ./mvnw'
 			sh  './mvnw compile'
 			echo 'Building the Food Delivery Project with Maven compiler'			

@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+   api:
+    build: ./foodBackend
+    ports:
+      - 9090:8082
+   web:
+    build: ./foodAdmin
+    ports:
+      - 4200:4200
+ 
+    environment:
+      DB_URL: jdbc:mysql://localhost:3306/foodDB
+   mysql: 
+    image: mysql
+    ports:
+      - 3307:3306
+    volumes:
+      - foodDelivery:/data/mysql
+volumes:
+  foodDelivery:
+
