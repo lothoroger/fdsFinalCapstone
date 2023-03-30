@@ -1,18 +1,11 @@
-FROM node:8.6-alpine
-
+FROM openjdk:11
 RUN mkdir /app
+#copy Jar complied to image /app folder
+COPY target/*.jar /app
+WORKDIR  /app
+CMD java -jar FoodDelivery-0.0.1-SNAPSHOT.jar --server.port=8082
 
-WORKDIR /app
-
-COPY package.json ./
-COPY .angular-cli.json ./
-COPY tsconfig.json ./
-COPY tslint.json ./
-COPY src/ ./src/
-
-RUN yarn install && yarn global add @angular/cli
-
-EXPOSE 4200
-
-ENTRYPOINT ["./node_modules/angular-cli/bin/ng serve --host 0.0.0.0 --port 4200"]
-CMD ["start", "ng serve ==host 0.0.0.0"]
+#FROM openjdk:11
+#ARG JAR_FILE=target/*.jar
+#COPY ${JAR_FILE} fdsdocker.jar
+#ENTRYPOINT ["java", "-jar", "/fdsdocker.jar"]
